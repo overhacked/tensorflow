@@ -327,6 +327,8 @@ def _impl(ctx):
 			    "-pthread",
 			    "-nostdinc",
 			    "-isystem",
+			    "external/MuslAarch64Gcc7/aarch64-linux-musl/include",
+			    "-isystem",
 			    "external/MuslAarch64Gcc7/aarch64-linux-musl/include/c++/7.5.0/aarch64-linux-musl",
 			    "-isystem",
 			    "external/MuslAarch64Gcc7/aarch64-linux-musl/include/c++/7.5.0",
