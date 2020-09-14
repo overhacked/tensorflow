@@ -197,6 +197,14 @@ build:rpi3-armv8 --define=tensorflow_mkldnn_contraction_kernel=0
 build:rpi3-armv8 --define=runtime=tflite
 build:rpi3-armv8_opt --copt=-funsafe-math-optimizations --copt=-ftree-vectorize --copt=-pipe
 
+build:rpi3-armv8-musl --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build:rpi3-armv8-musl --crosstool_top=//tools/arm_compiler/musl-gcc7-aarch64:toolchain
+build:rpi3-armv8-musl --cpu=armv8 --define=target_system=rpi3-armv8-musl
+build:rpi3-armv8-musl --copt=-march=armv8-a --copt=-mtune=cortex-a53 --copt=-DRASPBERRY_PI --copt=-std=gnu99
+build:rpi3-armv8-musl --define=tensorflow_mkldnn_contraction_kernel=0
+build:rpi3-armv8-musl --define=runtime=tflite
+build:rpi3-armv8-musl_opt --copt=-funsafe-math-optimizations --copt=-ftree-vectorize --copt=-pipe
+
 # Options extracted from configure script
 build:ngraph --define=with_ngraph_support=true
 build:numa --define=with_numa_support=true

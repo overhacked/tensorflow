@@ -241,6 +241,16 @@ def tf_repositories(path_prefix = "", tf_repo_name = ""):
     )
 
     tf_http_archive(
+        name = "MuslAarch64Gcc7",
+        build_file = clean_dep("//compilers:musl-gcc7-aarch64.BUILD"),
+        strip_prefix = "aarch64-linux-musl-cross/",
+        urls = [
+            "http://more.musl.cc/7/x86_64-linux-musl/aarch64-linux-musl-cross.tgz",
+        ],
+        sha256 = "e8e84ee3c737cb9d2138572c0c3272e6e88546e2cab92b26d5c5ee48de28b474",
+    )
+
+    tf_http_archive(
         name = "libxsmm_archive",
         build_file = clean_dep("//third_party:libxsmm.BUILD"),
         sha256 = "9c0af4509ea341d1ee2c6c19fc6f19289318c3bd4b17844efeb9e7f9691abf76",

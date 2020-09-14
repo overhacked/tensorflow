@@ -1,0 +1,6 @@
+#!/bin/bash --norc
+
+PATH="external/MuslAarch64Gcc7/libexec/gcc/aarch64-linux-musl/7.5.0/:$PATH" \
+    exec \
+    external/MuslAarch64Gcc7/bin/aarch64-linux-musl-gcc \
+    "$@"

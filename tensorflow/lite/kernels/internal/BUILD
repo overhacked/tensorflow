@@ -115,6 +115,13 @@ config_setting(
 )
 
 config_setting(
+    name = "rpi3-armv8-musl",
+    define_values = {
+        "target_system": "rpi3-armv8-musl"
+    },
+)
+
+config_setting(
     name = "armeabi-v7a",
     values = {
         "cpu": "armeabi-v7a",

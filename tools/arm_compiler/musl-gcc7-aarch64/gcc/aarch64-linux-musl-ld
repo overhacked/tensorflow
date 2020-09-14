@@ -1,0 +1,5 @@
+#!/bin/bash --norc
+
+exec -a aarch64-linux-musl-ld \
+    external/MuslAarch64Gcc7/bin/aarch64-linux-musl-ld \
+    "$@"

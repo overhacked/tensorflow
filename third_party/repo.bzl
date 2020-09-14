@@ -20,6 +20,7 @@ _SINGLE_URL_WHITELIST = depset([
     "LinaroArmGcc72",
     "LinaroAarch64Gcc49",
     "LinaroAarch64Gcc72",
+    "MuslAarch64Gcc7",
 ])
 
 def _is_windows(ctx):
