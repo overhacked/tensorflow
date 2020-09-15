@@ -325,17 +325,6 @@ def _impl(ctx):
 			    "-std=c++11",
 			    "--sysroot=external/MuslAarch64Gcc7/aarch64-linux-musl",
 			    "-pthread",
-			    "-nostdinc",
-			    "-isystem",
-			    "external/MuslAarch64Gcc7/aarch64-linux-musl/include",
-			    "-isystem",
-			    "external/MuslAarch64Gcc7/aarch64-linux-musl/include/c++/7.5.0/aarch64-linux-musl",
-			    "-isystem",
-			    "external/MuslAarch64Gcc7/aarch64-linux-musl/include/c++/7.5.0",
-			    "-isystem",
-			    "external/MuslAarch64Gcc7/lib/gcc/aarch64-linux-musl/7.5.0/include",
-			    "-isystem",
-			    "external/MuslAarch64Gcc7/lib/gcc/aarch64-linux-musl/7.5.0/include-fixed",
 			    # Security hardening on by default.
 			    "-fstack-protector",
 			    "-fPIE",
@@ -415,10 +404,11 @@ def _impl(ctx):
     ]
 
     cxx_builtin_include_directories = [
-        "%package(@MuslAarch64Gcc7//include)%",
+        "%package(@MuslAarch64Gcc7//aarch64-linux-musl/include/c++/7.5.0)%",
+        "%package(@MuslAarch64Gcc7//aarch64-linux-musl/include/c++/7.5.0/aarch64-linux-musl)%",
+        "%package(@MuslAarch64Gcc7//aarch64-linux-musl/include/c++/7.5.0/backward)%",
+        "%package(@MuslAarch64Gcc7//aarch64-linux-musl/include)%",
         "%package(@MuslAarch64Gcc7//lib/gcc/aarch64-linux-musl/7.5.0/include)%",
-        "%package(@MuslAarch64Gcc7//lib/gcc/aarch64-linux-musl/7.5.0/include-fixed)%",
-        "%package(@MuslAarch64Gcc7//aarch64-linux-musl/include)%/c++/7.5.0",
     ]
 
     artifact_name_patterns = []
