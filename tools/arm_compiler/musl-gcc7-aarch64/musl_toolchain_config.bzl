@@ -369,7 +369,7 @@ def _impl(ctx):
     			    "-no-canonical-prefixes",
     			    # Stamp the binary with a unique identifier.
     			    "-Wl,--build-id=md5",
-    			    "-Wl,--hash-style=musl",
+    			    "-Wl,--hash-style=gnu",
     			    "-Lexternal/MuslAarch64Gcc7/aarch64-linux-musl/lib",
     			    "-Bexternal/MuslAarch64Gcc7/aarch64-linux-musl/bin",
                         ],
