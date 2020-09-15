@@ -745,6 +745,9 @@ cc_library(
         ":rpi3-armv8": [
             ":neon_tensor_utils",
         ],
+        ":rpi3-armv8-musl": [
+            ":neon_tensor_utils",
+        ],
         ":haswell": [
             ":sse_tensor_utils",
         ],
